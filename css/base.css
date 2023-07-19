@@ -1,0 +1,27 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.container {
+  background: #000000;
+  width: 1127px;
+  height: 1580px;
+  margin: 0 auto;
+}
+
+.container > header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 104px;
+  background: #FFD600;
+}
+
+.brick-card {
+  height: 330px;
+  margin-top: 30px;
+}

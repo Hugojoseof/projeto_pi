@@ -1,0 +1,166 @@
+.sell-banner {
+  width: 40%;
+  height: 200px;
+}
+
+.main-section {
+  height: 2680px;
+  width: 90%;
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 50px;
+}
+
+.main-section > :nth-child(1){
+  background-color: #FFD80B;
+  height: 105px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circled-arrow {
+  width: 54px;
+}
+
+.main-section h2 {
+  font-size: 40px;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 1px 1px 6px #0008;
+}
+
+.sales {
+  text-align: end;
+}
+
+.see-all {
+  vertical-align: middle;
+  margin-right: 75px;
+  color: #FFD80B;
+}
+
+.see-all img {
+  rotate: 180deg;
+  height: 20px;
+  vertical-align: middle;
+}
+
+.ad1 {
+  width: 485px;
+  padding: 50px 10px;
+  background-color: #fff;
+}
+
+section > h2 {
+  text-align: left;
+  display: block;
+  width: 100%;
+  font-size: 40px;
+  margin-left: 35px;
+}
+
+.departments {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 130px;
+  justify-content: center;
+}
+
+.departments-cards {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 245px;
+  width: 260px;
+  border-radius: 20px;
+  border: 5px solid #FFD80B;
+}
+
+.departments-cards > img {
+  max-width: 200px;
+  max-height: 175px;
+}
+
+.departments-cards > span {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.ad2 {
+  width: 865px;
+  padding: 25px 100px;
+  background-color: #fff;
+}
+
+.most-wanted {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.most-wanted > :nth-child(1) { margin: 0; }
+
+.most-wanted > h2{ padding-left: 35px; }
+
+.most-wanted-items {
+  display: flex;
+  width: 700px;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.top-selling {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.top-selling div {
+  width: 350px;
+  height: 310px;
+  background-color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px 0px;
+  gap: 20px;
+}
+
+.top-selling img {
+  width: 120px;
+  height: 125px;
+}
+
+.top-selling h3 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+@media (max-width: 600px) {
+  .top-selling, .most-wanted, .ad2, .circled-arrow {
+    display: none;
+  }
+  .departments {
+    gap: 30px;
+  }
+  .departments-cards {
+    width: 135px;
+    height: 135px;
+  }
+  .departments-cards > img {
+    width: 70%;
+  }
+  .departments-cards > span {
+    font-size: 20px;
+  }
+}
