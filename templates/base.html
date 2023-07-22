@@ -4,31 +4,43 @@
 <html lang="pt-PT">
 
 <head>
+
+
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="{% static 'css/resets.css' %}" rel="stylesheet">
-    <link href="{% static 'css/user.css' %}" rel="stylesheet">
     <link href="{% static 'css/global.css' %}" rel="stylesheet">
+    {% block link %}
 
-    <title>{% block main %}
+    {% endblock %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <title>
+        {% block title %}
 
         {% endblock %}
     </title>
+
 </head>
 
 <body>
     <header>
-        <!-- <a href="./index.html"> -->
-            <img src="img/logo.png" alt="Logo ConstrUrbano" class="logo">
+        <a href="./index.html">
+            <img src="{% static 'img/logo.png' %}" alt="Logo ConstrUrbano" class="logo">
         </a>
-
         <div class="nav-menu">
-            <button>Ofertas</button>
-            <button>Destaques</button>
+            <a  href="#">
+                <button >Criar Produto</button>
+            </a>
+            <a href="#">
+                <button>Criar Categoria</button>
+            </a>
             <input type="text" placeholder="Busque aqui">
-            <a href="user.html">
-                <img src="img/user.png" alt="Logo de Usuário" class="user-icon">
+            <a href="login.html">
+                <img src="{% static 'img/user.png' %}" alt="Logo de Usuário" class="user-icon">
                 <span>Minha conta</span>
             </a>
         </div>
