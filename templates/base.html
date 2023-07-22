@@ -1,0 +1,65 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'css/resets.css' %}" rel="stylesheet">
+    <link href="{% static 'css/user.css' %}" rel="stylesheet">
+    <link href="{% static 'css/global.css' %}" rel="stylesheet">
+
+    <title>{% block main %}
+
+        {% endblock %}
+    </title>
+</head>
+
+<body>
+    <header>
+        <!-- <a href="./index.html"> -->
+            <img src="img/logo.png" alt="Logo ConstrUrbano" class="logo">
+        </a>
+
+        <div class="nav-menu">
+            <button>Ofertas</button>
+            <button>Destaques</button>
+            <input type="text" placeholder="Busque aqui">
+            <a href="user.html">
+                <img src="img/user.png" alt="Logo de Usuário" class="user-icon">
+                <span>Minha conta</span>
+            </a>
+        </div>
+    </header>
+
+    {% block main %}
+
+    {% endblock %}
+
+    <footer>
+        <div class="footer-section">
+            <span>Atendimento</span>
+            <strong>Horario de atendimento:</strong>
+            <strong>08:00 às 20:00 -</strong>
+            <strong>Segunda a Sábado,</strong>
+            <strong>horário de Brasília</strong>
+        </div>
+        <div class="footer-section">
+            <span>E-mail</span>
+            <strong>faleconosco@construrbano.com</strong>
+        </div>
+        <div class="footer-section">
+            <span>Institucional</span>
+            <strong>Sobre a construrbano</strong>
+        </div>
+        <div class="footer-section">
+            <span>Endereço</span>
+            <strong>Rua Antônio de Andrade, 1115</strong>
+            <strong>Itaú/RN - CEP: 59855-000</strong>
+        </div>
+    </footer>
+</body>
+
+</html>
