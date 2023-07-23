@@ -14,19 +14,20 @@ Home
   <img src="{% static 'img/banner.png' %}" alt="Banner de ofertas" class="sell-banner">
   <div class="main-section">
     <div>
-      <h2>Promoções</h2>
+      <h2>Produtos</h2>
     </div>
     <div class="sales">
       <div class="see-all">
         <a>ver todos</a>
         <img src="{% static 'img/arrow.png' %}" alt="seta">
       </div>
+
+      <!-- Produtos cadastrado -->
       <section>
         <img src="{% static 'img/circled-arrow.png' %}" alt="seta" class="circled-arrow flip">
-        {% for produto in produtos %}
+        {% for produto in produtos|slice:":4" %}  <!-- mostrar so 4 categorias -->
         <a href="detail_product.html">
           <div class="brick-card">
-
             <img src={{produto.imagem_principal.url}} alt="Tijolo">
             <div>
               <span>{{ produto.nome_produto }}</span>
@@ -36,35 +37,45 @@ Home
           </div>
         </a>
         {% endfor %}
-
         <img src="{% static 'img/circled-arrow.png' %}" alt="seta" class="circled-arrow">
       </section>
     </div>
+    <!-- decorar o site -->
     <section>
       <img src="{% static 'img/ad.png' %}" alt="acabou de chegar" class="ad1">
       <img src="{% static 'img/ad.png' %}" alt="acabou de chegar" class="ad1">
     </section>
-    <section>
-      <h2>Departamentos</h2>
-    </section>
-    <section>
-      <div class="departments">
-        {% for categoria in categorias %}
 
-        
-        <div class="departments-cards">
-          <img src="{{categoria.imagem_categoria.url}}" alt="tomada">
-          <span>{{categoria.nome_categoria}}</span>
-        </div>
-        {% endfor %}
-        
+    <section>
+
+      <h2>Departamentos</h2>
+      <h2><a href="#" style="color: rgb(255, 255, 255); font-size: 15px;">Ver todos</a></h2>
     </section>
+
+    <!-- Categorias cadastrada -->
+    <section>
+      {% for categoria in categorias|slice:":4" %} <!-- mostrar so 4 categorias -->
+      <a href="#">
+        <div class="departments">
+          <div class="departments-cards">
+            <img src="{{categoria.imagem_categoria.url}}" alt="tomada">
+            <span>{{categoria.nome_categoria}}</span>
+          </div>
+        </div>
+      </a>
+      {% endfor %}
+    </section>
+
+    <!-- So pra deixar o site mais bonito -->
+
     <section>
       <img src="{% static 'img/ad.png' %}" alt="acabou de chegar" class="ad2">
     </section>
+
     <section class="most-wanted">
       <h2>Produtos mais procurados</h2>
     </section>
+
     <section>
       <div class="most-wanted">
         <div class="see-all">
@@ -72,7 +83,8 @@ Home
           <img src="{% static 'img/arrow.png' %}" alt="seta">
         </div>
         <div class="most-wanted-items">
-          <a href="detail_product.html">
+
+          <a href="#">
             <div class="brick-card">
               <legend>25%</legend>
               <img src="{% static 'img/brick.png' %}" alt="Tijolo">
@@ -83,7 +95,8 @@ Home
               </div>
             </div>
           </a>
-          <a href="detail_product.html">
+
+          <a href="#">
             <div class="brick-card">
               <legend>25%</legend>
               <img src="{% static 'img/brick.png' %}" alt="Tijolo">
@@ -94,7 +107,8 @@ Home
               </div>
             </div>
           </a>
-          <a href="detail_product.html">
+
+          <a href="#">
             <div class="brick-card">
               <legend>25%</legend>
               <img src="{% static 'img/brick.png' %}" alt="Tijolo">
@@ -105,7 +119,8 @@ Home
               </div>
             </div>
           </a>
-          <a href="detail_product.html">
+
+          <a href="#">
             <div class="brick-card">
               <legend>25%</legend>
               <img src="{% static 'img/brick.png' %}" alt="Tijolo">
@@ -116,7 +131,8 @@ Home
               </div>
             </div>
           </a>
-          <a href="detail_product.html">
+
+          <a href="#">
             <div class="brick-card">
               <legend>25%</legend>
               <img src="{% static 'img/brick.png' %}" alt="Tijolo">
@@ -127,39 +143,35 @@ Home
               </div>
             </div>
           </a>
-          <div class="brick-card">
-            <legend>25%</legend>
-            <img src="{% static 'img/brick.png' %}" alt="Tijolo">
-            <div>
-              <span>Tijolo 6 furos (9X14X19cm)</span>
-              <s>R$ 10 por uni.</s>
-              <h3>R$ 9 por uni.</h3>
+
+          <a href="#">
+            <div class="brick-card">
+              <legend>25%</legend>
+              <img src="{% static 'img/brick.png' %}" alt="Tijolo">
+              <div>
+                <span>Tijolo 6 furos (9X14X19cm)</span>
+                <s>R$ 10 por uni.</s>
+                <h3>R$ 9 por uni.</h3>
+              </div>
             </div>
-          </div>
+          </a>
         </div>
       </div>
+
       <div class="top-selling">
         <div>
           <h3>Produtos mais vendidos do site</h3>
-          <a href="detail_product.html"><img src="{% static 'img/brick.png' %}" alt="Tijolo"
-              style="box-shadow: 1px 1px 2px;"></a>
-          <a href="detail_product.html"><img src="{% static 'img/brick.png' %}" alt="Tijolo"
-              style="box-shadow: 1px 1px 2px;"></a>
-          <a href="detail_product.html"><img src="{% static 'img/brick.png' %}" alt="Tijolo"
-              style="box-shadow: 1px 1px 2px;"></a>
-          <a href="detail_product.html"><img src="{% static 'img/brick.png' %}" alt="Tijolo"
-              style="box-shadow: 1px 1px 2px;"></a>
+          <a href="#"><img src="{% static 'img/brick.png' %}" alt="Tijolo" style="box-shadow: 1px 1px 2px;"></a>
+          <a href="#"><img src="{% static 'img/brick.png' %}" alt="Tijolo" style="box-shadow: 1px 1px 2px;"></a>
+          <a href="#"><img src="{% static 'img/brick.png' %}" alt="Tijolo" style="box-shadow: 1px 1px 2px;"></a>
+          <a href="#"><img src="{% static 'img/brick.png' %}" alt="Tijolo" style="box-shadow: 1px 1px 2px;"></a>
         </div>
         <div>
           <h3>Produtos mais vendidos do site</h3>
-          <a href="detail_product.html"><img src="{% static 'img/brick.png' %}" alt="Tijolo"
-              style="box-shadow: 1px 1px 2px;"></a>
-          <a href="detail_product.html"><img src="{% static 'img/brick.png' %}" alt="Tijolo"
-              style="box-shadow: 1px 1px 2px;"></a>
-          <a href="detail_product.html"><img src="{% static 'img/brick.png' %}" alt="Tijolo"
-              style="box-shadow: 1px 1px 2px;"></a>
-          <a href="detail_product.html"><img src="{% static 'img/brick.png' %}" alt="Tijolo"
-              style="box-shadow: 1px 1px 2px;"></a>
+          <a href="#"><img src="{% static 'img/brick.png' %}" alt="Tijolo" style="box-shadow: 1px 1px 2px;"></a>
+          <a href="#"><img src="{% static 'img/brick.png' %}" alt="Tijolo" style="box-shadow: 1px 1px 2px;"></a>
+          <a href="#"><img src="{% static 'img/brick.png' %}" alt="Tijolo" style="box-shadow: 1px 1px 2px;"></a>
+          <a href="#"><img src="{% static 'img/brick.png' %}" alt="Tijolo" style="box-shadow: 1px 1px 2px;"></a>
         </div>
       </div>
     </section>

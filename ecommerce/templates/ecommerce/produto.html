@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block link %}
+<link href="{% static 'css/login.css' %}" rel="stylesheet">
+{% endblock %}
+{% block title %}
+Formulario Produto
+{% endblock %}
+
+{% block main %}
+<main>
+    <div class="main-section">
+      <form>
+        <div>
+          <h1>Adicione o produto</h1>
+          <span>É gratuito</span>
+        </div>
+        <div class="inputs-section">
+          <div>
+            <label for="nome" class="form-label">Nome</label>
+            {{ form.nome_produto }}
+            <input type="text" placeholder="Sobrenome" required>
+          </div>
+          <div>
+          <input type="email" placeholder="E-mail" required>
+          <input type="number" placeholder="CPF" maxlength="11" minlength="11" required>
+          </div>
+
+          <div>
+            <input type="password" placeholder="Senha" minlength="8" required>
+            <input type="password" placeholder="Senha novamente" minlength="8" required>
+          </div>
+        </div>
+        <a href="user.html">Confirmar</a>
+      </form>
+    </div>
+  </main>
+  {% endblock %}
