@@ -19,57 +19,26 @@ section {
 </style>
 {% endblock %}
 {% block title %}
-ConstrUrbano - Details - {{ produto.nome_produto }}
+ConstrUrbano - Details - {{ categoria.nome_categoria }}
 {% endblock %}
 
 {% block main %}
    
     <main class="product-container">
       <header>
-        <h1 style="align-self: flex-start;">{{ produto.nome_produto }}</h1>
+        <h1 style="align-self: flex-start;">{{ categoria.nome_categoria }}</h1>
       </header>
       <section class="detail-product">
         <div class="rated" style="margin-bottom: 0px;"><i class="fa-solid fa-star"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></i>(300)</div>
         <div class="product-preview">
-          <div class="product-preview-item active">
-            
-            <img src="{{ produto.imagem_principal.url }}" alt="" />
+          <div class="product-preview-item active">       
+            <img src="{{ categoria.imagem_categoria.url }}" alt="" />
           </div>
-          <div class="product-preview-item">
-            <img src="{{ produto.imagem_1.url }}" alt="" />
-          </div>
-          <div class="product-preview-item">
-            <img src="{{ produto.imagem_2.url }}" alt="" />
-          </div>
-          <div class="product-preview-item">
-            <img src="{{ produto.imagem_3.url }}" alt="" />
-          </div>
-        </div>
 
-        <div>
-          <div class="product-info">
-            <h5>R$ {{ produto.valor }} por unidade</h5>
-            <span>á vista pix e boleto</span>
 
-            <h2 class="state">Em estoque</h2>
-          </div>
-          <div class="cep-box">
-            <label for="cep">Calcular frete e prazo de entrega</label>
-            <div style="display: flex; align-items: center; gap: 10px">
-              <input type="text" placeholder=" Inserir cep" required />
-              <button style="border: 3px solid #FFD600; background: transparent; color: #FFF; padding: 5px; border-radius: 5px; font-weight: 700;">OK</button>
-            </div>
-          </div>
-          <br>
-          <button class="btn-sale"><a href="confirm_sale.html">Comprar</a></button>
-        </div>
 
-        <div class="product-info">
-          <span>Descrição:</span>
-          <h5>{{ produto.descricao }}</h5>
-          
-        </div>
 
+      
         
       </section>
       <section>

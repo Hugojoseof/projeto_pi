@@ -23,7 +23,7 @@ ContrUrbano - Departamentos
         <aside class="filter-menu"></aside></div>
         <div class="list-products">
           {% for categoria in categorias %}
-            <a href="{% url 'produtos' %}">
+            <a href="{% url 'categoria_detalhes' categoria.id %}">
               <div class="brick-card">
                 <img src={{categoria.imagem_categoria.url}} alt="Tijolo">
                 <div>

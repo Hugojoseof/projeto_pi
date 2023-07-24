@@ -25,8 +25,8 @@ Home
       <!-- Produtos cadastrado -->
       <section>
         <img src="{% static 'img/circled-arrow.png' %}" alt="seta" class="circled-arrow flip">
-        {% for produto in produtos|slice:":4" %} <!-- mostrar so 4 categorias -->
-        <a href="detail_product.html">
+        {% for produto in produtos|slice:":4" %} <!-- mostrar so 4 produtos -->
+        <a href="{% url 'produto_detalhes' produto.id %}">
           <div class="brick-card">
             <img src={{produto.imagem_principal.url}} alt="Tijolo">
             <div>
@@ -59,7 +59,7 @@ Home
       <!-- Categorias cadastrada -->
       <section>
         {% for categoria in categorias|slice:":4" %} <!-- mostrar so 4 categorias -->
-        <a href="#">
+        <a href="{% url 'produtos_por_departamento' categoria.id %}">
           <div class="departments">
             <div class="departments-cards">
               <img src="{{categoria.imagem_categoria.url}}" alt="tomada">

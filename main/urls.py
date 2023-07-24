@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls.static import static
 from . import settings
-from ecommerce.views import index, produto_criar, admin_pag, produtos,categorias
+from ecommerce.views import index, produto_criar, admin_pag, produtos,categorias, produto_detalhes, produtos_por_departamento, categoria_detalhes
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -27,4 +27,7 @@ urlpatterns = [
     path("admin2/", admin_pag) ,
     path("produtogerais/", produtos, name="produtos" ),
     path("categoriasgerais/", categorias, name="categorias" ),
+    path("produto/<int:produto_id>/", produto_detalhes, name="produto_detalhes"),
+    path("categoria/<int:categoria_id>/", categoria_detalhes, name="categoria_detalhes"),
+    path("departamento/<int:departamento_id>/", produtos_por_departamento, name="produtos_por_departamento"),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
