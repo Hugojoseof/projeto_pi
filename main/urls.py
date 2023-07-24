@@ -18,9 +18,10 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls.static import static
 from . import settings
-from ecommerce.views import index
+from ecommerce.views import index, produto_criar, verificar_formulario
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", index, name="index.html"),
+    path("", index, name="index"),
+    path("produto/", produto_criar, name="produto_criar" ),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
