@@ -33,10 +33,10 @@
         </a>
         <div class="nav-menu">
             <a  href="{% url 'produto_criar' %}">
-                <button >Criar Produto</button>
+                <button >Ofertas</button>
             </a>
             <a href="#">
-                <button>Criar Categoria</button>
+                <button>Promoções</button>
             </a>
             <input type="text" placeholder="Busque aqui">
             <a href="login.html">
@@ -49,14 +49,10 @@
     {% block main %}
 
     {% endblock %}
-    
-    {% if messages %}
-  <ul class="messages">
-    {% for message in messages %}
-      <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+
     {% endfor %}
   </ul>
-{% endif %}
+
     <footer>
         <div class="footer-section">
             <span>Atendimento</span>

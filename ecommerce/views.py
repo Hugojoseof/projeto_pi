@@ -29,3 +29,6 @@ def produto_criar(request):
 
     return render(request, "ecommerce/produto.html", {'form': form})
 
+def admin_pag(request): 
+    return render(request,"ecommerce/adm.html")
+

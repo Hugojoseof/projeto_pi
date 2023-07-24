@@ -18,10 +18,11 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls.static import static
 from . import settings
-from ecommerce.views import index, produto_criar
+from ecommerce.views import index, produto_criar, admin_pag
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", index, name="index"),
     path("produto/", produto_criar, name="produto_criar" ),
+    path("admin2/", admin_pag) 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
