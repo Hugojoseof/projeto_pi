@@ -23,7 +23,7 @@ ContrUrbano - Produtos
         <aside class="filter-menu"></aside></div>
         <div class="list-products">
           {% for produto in produtos %}
-            <a href="detail_product.html">
+            <a href="{% url 'produto_detalhes' produto.id %}">
               <div class="brick-card">
                 <img src={{produto.imagem_principal.url}} alt="Tijolo">
                 <div>
