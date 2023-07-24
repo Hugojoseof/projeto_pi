@@ -32,3 +32,11 @@ def produto_criar(request):
 def admin_pag(request): 
     return render(request,"ecommerce/adm.html")
 
+def produtos(request):
+    produto = Produto.objects.all()
+
+    context = {
+        'produtos': produto,
+    }
+    return render (request, "ecommerce/produtosgerais.html", context)
+
