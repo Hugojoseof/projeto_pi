@@ -40,3 +40,11 @@ def produtos(request):
     }
     return render (request, "ecommerce/produtosgerais.html", context)
 
+def categorias(request):
+    categoria = Categoria.objects.all()
+
+    context = {
+        'categorias': categoria,
+    }
+    return render (request, "ecommerce/categoriasgerais.html", context)
+

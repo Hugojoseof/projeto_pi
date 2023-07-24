@@ -18,14 +18,14 @@ Home
     </div>
     <div class="sales">
       <div class="see-all">
-        <a>ver todos</a>
+        <a href="{% url 'produtos' %}">Ver todos</a>
         <img src="{% static 'img/arrow.png' %}" alt="seta">
       </div>
 
       <!-- Produtos cadastrado -->
       <section>
         <img src="{% static 'img/circled-arrow.png' %}" alt="seta" class="circled-arrow flip">
-        {% for produto in produtos|slice:":4" %}  <!-- mostrar so 4 categorias -->
+        {% for produto in produtos|slice:":4" %} <!-- mostrar so 4 categorias -->
         <a href="detail_product.html">
           <div class="brick-card">
             <img src={{produto.imagem_principal.url}} alt="Tijolo">
@@ -49,22 +49,27 @@ Home
     <section>
 
       <h2>Departamentos</h2>
-      <h2><a href="#" style="color: rgb(255, 255, 255); font-size: 15px;">Ver todos</a></h2>
-    </section>
 
-    <!-- Categorias cadastrada -->
-    <section>
-      {% for categoria in categorias|slice:":4" %} <!-- mostrar so 4 categorias -->
-      <a href="#">
-        <div class="departments">
-          <div class="departments-cards">
-            <img src="{{categoria.imagem_categoria.url}}" alt="tomada">
-            <span>{{categoria.nome_categoria}}</span>
-          </div>
-        </div>
-      </a>
-      {% endfor %}
     </section>
+    <div class="sales">
+      <div class="see-all">
+        <a href="{% url 'categorias' %}">Ver todos</a>
+        <img src="{% static 'img/arrow.png' %}" alt="seta">
+      </div>
+      <!-- Categorias cadastrada -->
+      <section>
+        {% for categoria in categorias|slice:":4" %} <!-- mostrar so 4 categorias -->
+        <a href="#">
+          <div class="departments">
+            <div class="departments-cards">
+              <img src="{{categoria.imagem_categoria.url}}" alt="tomada">
+              <span>{{categoria.nome_categoria}}</span>
+            </div>
+          </div>
+        </a>
+        {% endfor %}
+      </section>
+    </div>
 
     <!-- So pra deixar o site mais bonito -->
 
