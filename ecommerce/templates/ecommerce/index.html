@@ -12,11 +12,11 @@ Home
 
 <main>
   <img src="{% static 'img/banner.png' %}" alt="Banner de ofertas" class="sell-banner">
-  <div class="main-section">
+  <div class="main-section" style="display: flex; justify-content: start; height: auto;">
     <div>
       <h2>Produtos</h2>
     </div>
-    <div class="sales">
+    <div class="sales" style="margin-top: 20px;">
       <div class="see-all">
         <a href="{% url 'produtos' %}">Ver todos</a>
         <img src="{% static 'img/arrow.png' %}" alt="seta">
@@ -41,145 +41,6 @@ Home
       </section>
     </div>
     <!-- decorar o site -->
-    <section>
-      <img src="{% static 'img/ad.png' %}" alt="acabou de chegar" class="ad1">
-      <img src="{% static 'img/ad.png' %}" alt="acabou de chegar" class="ad1">
-    </section>
-
-    <section>
-
-      <h2>Departamentos</h2>
-
-    </section>
-    <div class="sales">
-      <div class="see-all">
-        <a href="{% url 'categorias' %}">Ver todos</a>
-        <img src="{% static 'img/arrow.png' %}" alt="seta">
-      </div>
-      <!-- Categorias cadastrada -->
-      <section>
-        {% for categoria in categorias|slice:":4" %} <!-- mostrar so 4 categorias -->
-        <a href="{% url 'produtos_por_departamento' categoria.id %}">
-          <div class="departments">
-            <div class="departments-cards">
-              <img src="{{categoria.imagem_categoria.url}}" alt="tomada">
-              <span>{{categoria.nome_categoria}}</span>
-            </div>
-          </div>
-        </a>
-        {% endfor %}
-      </section>
-    </div>
-
-    <!-- So pra deixar o site mais bonito -->
-
-    <section>
-      <img src="{% static 'img/ad.png' %}" alt="acabou de chegar" class="ad2">
-    </section>
-
-    <section class="most-wanted">
-      <h2>Produtos mais procurados</h2>
-    </section>
-
-    <section>
-      <div class="most-wanted">
-        <div class="see-all">
-          <a>ver todos</a>
-          <img src="{% static 'img/arrow.png' %}" alt="seta">
-        </div>
-        <div class="most-wanted-items">
-
-          <a href="#">
-            <div class="brick-card">
-              <legend>25%</legend>
-              <img src="{% static 'img/brick.png' %}" alt="Tijolo">
-              <div>
-                <span>Tijolo 6 furos (9X14X19cm)</span>
-                <s>R$ 10 por uni.</s>
-                <h3>R$ 9 por uni.</h3>
-              </div>
-            </div>
-          </a>
-
-          <a href="#">
-            <div class="brick-card">
-              <legend>25%</legend>
-              <img src="{% static 'img/brick.png' %}" alt="Tijolo">
-              <div>
-                <span>Tijolo 6 furos (9X14X19cm)</span>
-                <s>R$ 10 por uni.</s>
-                <h3>R$ 9 por uni.</h3>
-              </div>
-            </div>
-          </a>
-
-          <a href="#">
-            <div class="brick-card">
-              <legend>25%</legend>
-              <img src="{% static 'img/brick.png' %}" alt="Tijolo">
-              <div>
-                <span>Tijolo 6 furos (9X14X19cm)</span>
-                <s>R$ 10 por uni.</s>
-                <h3>R$ 9 por uni.</h3>
-              </div>
-            </div>
-          </a>
-
-          <a href="#">
-            <div class="brick-card">
-              <legend>25%</legend>
-              <img src="{% static 'img/brick.png' %}" alt="Tijolo">
-              <div>
-                <span>Tijolo 6 furos (9X14X19cm)</span>
-                <s>R$ 10 por uni.</s>
-                <h3>R$ 9 por uni.</h3>
-              </div>
-            </div>
-          </a>
-
-          <a href="#">
-            <div class="brick-card">
-              <legend>25%</legend>
-              <img src="{% static 'img/brick.png' %}" alt="Tijolo">
-              <div>
-                <span>Tijolo 6 furos (9X14X19cm)</span>
-                <s>R$ 10 por uni.</s>
-                <h3>R$ 9 por uni.</h3>
-              </div>
-            </div>
-          </a>
-
-          <a href="#">
-            <div class="brick-card">
-              <legend>25%</legend>
-              <img src="{% static 'img/brick.png' %}" alt="Tijolo">
-              <div>
-                <span>Tijolo 6 furos (9X14X19cm)</span>
-                <s>R$ 10 por uni.</s>
-                <h3>R$ 9 por uni.</h3>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-
-      <div class="top-selling">
-        <div>
-          <h3>Produtos mais vendidos do site</h3>
-          <a href="#"><img src="{% static 'img/brick.png' %}" alt="Tijolo" style="box-shadow: 1px 1px 2px;"></a>
-          <a href="#"><img src="{% static 'img/brick.png' %}" alt="Tijolo" style="box-shadow: 1px 1px 2px;"></a>
-          <a href="#"><img src="{% static 'img/brick.png' %}" alt="Tijolo" style="box-shadow: 1px 1px 2px;"></a>
-          <a href="#"><img src="{% static 'img/brick.png' %}" alt="Tijolo" style="box-shadow: 1px 1px 2px;"></a>
-        </div>
-        <div>
-          <h3>Produtos mais vendidos do site</h3>
-          <a href="#"><img src="{% static 'img/brick.png' %}" alt="Tijolo" style="box-shadow: 1px 1px 2px;"></a>
-          <a href="#"><img src="{% static 'img/brick.png' %}" alt="Tijolo" style="box-shadow: 1px 1px 2px;"></a>
-          <a href="#"><img src="{% static 'img/brick.png' %}" alt="Tijolo" style="box-shadow: 1px 1px 2px;"></a>
-          <a href="#"><img src="{% static 'img/brick.png' %}" alt="Tijolo" style="box-shadow: 1px 1px 2px;"></a>
-        </div>
-      </div>
-    </section>
-  </div>
+    
 </main>
 {% endblock %}

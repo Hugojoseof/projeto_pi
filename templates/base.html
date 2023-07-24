@@ -32,14 +32,14 @@
             <img src="{% static 'img/logo.png' %}" alt="Logo ConstrUrbano" class="logo">
         </a>
         <div class="nav-menu">
-            <a  href="{% url 'produto_criar' %}">
-                <button >Ofertas</button>
+            <a href="{% url 'produtos' %}">
+                <button>Produtos</button>
             </a>
-            <a href="#">
-                <button>Promoções</button>
+            <a href="{% url 'categorias' %}">
+                <button>Departamentos</button>
             </a>
             <input type="text" placeholder="Busque aqui">
-            <a href="login.html">
+            <a href="/pagadmin">
                 <img src="{% static 'img/user.png' %}" alt="Logo de Usuário" class="user-icon">
                 <span>Minha conta</span>
             </a>
@@ -50,8 +50,8 @@
 
     {% endblock %}
 
-   
-  </ul>
+
+    </ul>
 
     <footer>
         <div class="footer-section">

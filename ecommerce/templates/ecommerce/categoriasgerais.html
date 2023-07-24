@@ -18,13 +18,11 @@ ContrUrbano - Departamentos
         color: #fff;
         text-shadow: 1px 1px 6px #0008;">Departamentos</h1>
     </header>
-    <section><div>
-        <p style="color: #FFD80B; ">Filtrar por:</p>
-        <aside class="filter-menu"></aside></div>
+    <section style="display: flex; justify-content: center;">
         <div class="list-products">
           {% for categoria in categorias %}
-            <a href="{% url 'categoria_detalhes' categoria.id %}">
-              <div class="brick-card">
+            
+              <div class="brick-card" style="display: flex; justify-content: start; height: auto;">
                 <img src={{categoria.imagem_categoria.url}} alt="Tijolo">
                 <div>
                   <span>{{ categoria.nome_categoria }}</span>

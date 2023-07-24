@@ -86,16 +86,6 @@ def categoria_detalhes(request, categoria_id):
 
     return render(request, 'ecommerce/detail_categorias.html', context)
 
-def produtos_por_departamento(request, departamento_id):
-    departamento = get_object_or_404(Categoria, pk=departamento_id)
-    produtos = Produto.objects.filter(categoria=departamento)
-
-    context = {
-        'departamento': departamento,
-        'produtos': produtos,
-    }
-
-    return render(request, 'ecommerce/produtos_por_departamentos.html', context)
 
 def excluir_produto(request, id):
     produto = get_object_or_404(Produto, id=id)
