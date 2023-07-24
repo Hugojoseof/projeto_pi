@@ -21,8 +21,7 @@ def produto_criar(request):
         
         if form.is_valid():
             form.save()
-            messages.success(request, 'Produto criado com sucesso!')
-            return redirect('index')
+            return redirect('produtos')
             
     else:
         form = ProdutoForm()
@@ -47,4 +46,17 @@ def categorias(request):
         'categorias': categoria,
     }
     return render (request, "ecommerce/categoriasgerais.html", context)
+
+def categoria_criar(request):
+    if request.method == 'POST':
+        form = CategoriaForm(request.POST, request.FILES)
+        
+        if form.is_valid():
+            form.save()
+            return redirect('categorias')
+            
+    else:
+        form = CategoriaForm()
+
+    return render(request, "ecommerce/categoria.html", {'form': form})
 
