@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls.static import static
 from . import settings
-from ecommerce.views import index, produto_criar, verificar_formulario
+from ecommerce.views import index, produto_criar
 
 urlpatterns = [
     path("admin/", admin.site.urls),
