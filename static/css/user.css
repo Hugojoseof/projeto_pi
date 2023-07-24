@@ -8,7 +8,6 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   color: #fff;
 }
 
@@ -53,7 +52,7 @@ h2 {
   border-radius: 200px;
 }
 
-.user-card >:nth-child(3) {
+.user-card>:nth-child(3) {
   display: flex;
   flex-grow: 1;
   align-self: flex-end;
@@ -61,7 +60,7 @@ h2 {
   margin-bottom: 20px;
 }
 
-.user-card > :nth-child(3) > div {
+.user-card> :nth-child(3)>div {
   width: 41px;
   height: 41px;
   border: solid 4px #FFD600;
@@ -82,17 +81,19 @@ h2 {
   flex-wrap: wrap;
 }
 
-.orders > div{
+.orders>div {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   gap: 20px;
 }
 
-.orders div > strong { text-transform: uppercase; }
+.orders div>strong {
+  text-transform: uppercase;
+}
 
-.orders div > span {
- 
+.orders div>span {
+
   font-size: 16px;
 }
 
@@ -108,15 +109,17 @@ h2 {
   flex-direction: column;
 }
 
-.address > p {
+.address>p {
   font-weight: 700;
 }
 
-.address > span {
+.address>span {
   color: #0008;
 }
 
-hr { width: 100%; }
+hr {
+  width: 100%;
+}
 
 .buttons {
   display: flex;
@@ -142,21 +145,21 @@ button {
     height: 200px;
   }
 
-  .user-card > img {
+  .user-card>img {
     width: 50px;
     height: 50px;
     padding: 10px;
   }
 
-  .user-card > div > h3 {
+  .user-card>div>h3 {
     font-size: 20px;
   }
 
-  .user-card > div > span {
+  .user-card>div>span {
     font-size: 16px;
   }
 
-  .user-card > :nth-child(3) {
+  .user-card> :nth-child(3) {
     display: none;
   }
 

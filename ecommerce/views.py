@@ -28,7 +28,12 @@ def produto_criar(request):
     return render(request, "ecommerce/produto.html", {'form': form})
 
 def admin_pag(request): 
-    return render(request,"ecommerce/adm.html")
+    produtos = Produto.objects.all()
+
+    context = {
+        'produto': produtos,
+    }
+    return render(request,"ecommerce/adm.html",context)
 
 def produtos(request):
     produto = Produto.objects.all()
@@ -59,8 +64,8 @@ def categoria_criar(request):
 
     return render(request, "ecommerce/categoria.html", {'form': form})
 
-def produto_detalhes(request, produto_id):
-    produto = get_object_or_404(Produto, pk=produto_id)
+def produto_detalhes(request, id):
+    produto = get_object_or_404(Produto, id=id)
     produtos = Produto.objects.all()
     
     context = {
@@ -92,3 +97,20 @@ def produtos_por_departamento(request, departamento_id):
 
     return render(request, 'ecommerce/produtos_por_departamentos.html', context)
 
+def excluir_produto(request, id):
+    produto = get_object_or_404(Produto, id=id)
+    produto.delete()
+    return redirect("pag_admin")
+def editar_produto(request,id):
+    produto = get_object_or_404(Produto,id=id)
+    forms = ProdutoForm(instance=produto)
+
+    if(request.method == 'POST'):
+        forms = ProdutoForm(request.POST, instance=produto)
+        if(forms.is_valid()):
+            produto.save()
+            return redirect('pag_admin')
+        else:
+            return render(request, 'ecommerce/edit.html', { 'form':forms, 'produtos':produto } )
+    else:
+        return render(request, 'ecommerce/edit.html', { 'form':forms, 'produtos':produto } )

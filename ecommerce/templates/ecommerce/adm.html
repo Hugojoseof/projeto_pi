@@ -1,143 +1,87 @@
-
+{% extends 'base.html' %}
 {% load static %}
 
-
-<!DOCTYPE html>
-<html lang="pt-PT">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="{% static 'css/resets.css' %}">
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/resets.css' %}">
   <link rel="stylesheet" href="{% static 'css/user.css' %}">
   <link rel="stylesheet" href="{% static 'css/global.css' %}">
-  <title>Administrador</title>
-</head>
-<body>
-  <header>
-    <a href="./index.html">
-      <img src="img/logo.png" alt="Logo ConstrUrbano" class="logo">
-    </a>
+  <style>
+    .forms {
+      width: auto;
+      height: 50px;
+    }
 
-    <div class="nav-menu">
-      <button >Ofertas</button>
-      <button >Destaques</button>
-      <input type="text" placeholder="Busque aqui">
-      <a href="user.html">
-        <img src="img/user.png" alt="Logo de Usuário" class="user-icon">
-        <span>Minha conta</span>
-      </a>
-    </div>
-  </header>
-  <main>
-    <div class="main-section">
+    .buttons {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: auto;
+      margin: 50px;
+    }
+  </style>
+{% endblock %}
+{% block title %}
+Administrador
+{% endblock %}
+{% block main %}
+  <main style="height: auto;">
+    <div class="main-section" style="display: flex; justify-content:start; margin-bottom: 20px;">
       <div class="user-card">
         <img src="img/user.png" alt="user icon">
         <div>
           <h3>Bem vindo, prezado Administrador</h3>
           <span>Email: adminemail@email.com</span>
         </div>
-        <div><div></div></div>
+        <div>
+          <div></div>
+        </div>
       </div>
-
-      <h2>Os clientes que acessaram este site</h2>
+      <div class="buttons">
+        <a href="{% url 'produto_criar' %}">
+          <button class="forms">
+            Adicionar produto
+          </button>
+        </a>
+        <a href="{% url 'categoria_criar' %}">
+          <button class="forms">
+            Adicionar catergoria
+          </button>
+        </a>
+      </div>
+      <h2 style="margin: 20px;">Lista de Produtos</h2>
 
       <div class="orders" style="
       margin-bottom: 30px;
-      height: 645px;
+      height: auto;
       ">
+        {% for produtos in produto %}
         <div>
-          <strong style="text-transform: capitalize;">ID do cliente</strong>
-          <span>#9898376</span>
+          <strong style="text-transform: capitalize;">Nome do Produto</strong>
+          <span>{{ produtos.nome_produto }}</span>
         </div>
         <div>
-          <strong style="text-transform: capitalize;">Última requisição</strong>
-          <span>22/11/2022</span>
+          <strong style="text-transform: capitalize;">Preço</strong>
+          <span>{{ produtos.valor }}</span>
         </div>
         <div>
-          <strong style="text-transform: capitalize;">Email</strong>
-          <span>Clienteemail@email.com</span>
+          <strong style="text-transform: capitalize;">Catergoria</strong>
+          <span>{{ produtos.categoria.nome_categoria }}</span>
         </div>
         <div>
-          <strong style="text-transform: capitalize;">Senha</strong>
-          <span>*****</span>
+          <a href="{% url 'deletar_produto' produtos.id  %}">
+            <button style="height: auto;  font-size: 25px; background-color: red; ">
+              Excluir
+            </button>
+          </a>
+          <a href="{% url 'editar_produto' produtos.id  %}">
+            <button style="height: auto; font-size: 25px; background-color: green;">
+              Editar
+            </button>
+          </a>
         </div>
-        <hr/>
-        <div>
-          <strong style="text-transform: capitalize;">ID do cliente</strong>
-          <span>#9898376</span>
-        </div>
-        <div>
-          <strong style="text-transform: capitalize;">Última requisição</strong>
-          <span>22/11/2022</span>
-        </div>
-        <div>
-          <strong style="text-transform: capitalize;">Email</strong>
-          <span>Clienteemail@email.com</span>
-        </div>
-        <div>
-          <strong style="text-transform: capitalize;">Senha</strong>
-          <span>*****</span>
-        </div>
-        <hr/>
-        <div>
-          <strong style="text-transform: capitalize;">ID do cliente</strong>
-          <span>#9898376</span>
-        </div>
-        <div>
-          <strong style="text-transform: capitalize;">Última requisição</strong>
-          <span>22/11/2022</span>
-        </div>
-        <div>
-          <strong style="text-transform: capitalize;">Email</strong>
-          <span>Clienteemail@email.com</span>
-        </div>
-        <div>
-          <strong style="text-transform: capitalize;">Senha</strong>
-          <span>*****</span>
-        </div>
-        <hr/>
-        <div>
-          <strong style="text-transform: capitalize;">ID do cliente</strong>
-          <span>#9898376</span>
-        </div>
-        <div>
-          <strong style="text-transform: capitalize;">Última requisição</strong>
-          <span>22/11/2022</span>
-        </div>
-        <div>
-          <strong style="text-transform: capitalize;">Email</strong>
-          <span>Clienteemail@email.com</span>
-        </div>
-        <div>
-          <strong style="text-transform: capitalize;">Senha</strong>
-          <span>*****</span>
-        </div>
-        
-      
-    </div>
+        <hr />
+
+        {% endfor %}
+      </div>
   </main>
-  <footer>
-    <div class="footer-section">
-      <span>Atendimento</span>
-      <strong>Horario de atendimento:</strong>
-      <strong>08:00 às 20:00 -</strong>
-      <strong>Segunda a Sábado,</strong>
-      <strong>horário de Brasília</strong>
-    </div>
-    <div class="footer-section">
-      <span>E-mail</span>
-      <strong>faleconosco@construrbano.com</strong>
-    </div>
-    <div class="footer-section">
-      <span>Institucional</span>
-      <strong>Sobre a construrbano</strong>
-    </div>
-    <div class="footer-section">
-      <span>Endereço</span>
-      <strong>Rua Antônio de Andrade, 1115</strong>
-      <strong>Itaú/RN - CEP: 59855-000</strong>
-    </div>
-  </footer>
-</body>
-</html>
+  {% endblock %}

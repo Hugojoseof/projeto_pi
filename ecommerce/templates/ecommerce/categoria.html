@@ -13,13 +13,13 @@ Formulário Produto
 {% block main %}
 <main>
     <div class="main-section">
-        <form method="post" enctype="multipart/form-data">
+        <form method="post" enctype="multipart/form-data" style="display: flex; justify-content: flex-start; height: 400px;">
             {% csrf_token %}
             <div class="form-header">
                 <h1>Adicione o Departamento</h1>
-                <span>É gratuito</span>
+        
             </div>
-            <div class="form-body">
+            <div class="form-body" style="display: flex; flex-direction: column; margin: 10px;">
                 <div class="form-group ">
                     <label for="id_nome_categoria">Nome</label>
                     {{ form.nome_categoria }}
@@ -29,7 +29,7 @@ Formulário Produto
                     {{ form.imagem_categoria }}
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary">Enviar</button>
+            <button type="submit" class="btn btn-primary" style="margin: 30px;">Enviar</button>
         </form>
     </div>
 

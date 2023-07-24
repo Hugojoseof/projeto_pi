@@ -18,16 +18,18 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls.static import static
 from . import settings
-from ecommerce.views import index, produto_criar, admin_pag, produtos,categorias, produto_detalhes, produtos_por_departamento, categoria_detalhes
-
+from ecommerce.views import *
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", index, name="index"),
-    path("produto/", produto_criar, name="produto_criar" ),
-    path("admin2/", admin_pag) ,
+    path("produtocriar/", produto_criar, name="produto_criar" ),
+    path("admin2/", admin_pag, name="pag_admin") ,
     path("produtogerais/", produtos, name="produtos" ),
     path("categoriasgerais/", categorias, name="categorias" ),
-    path("produto/<int:produto_id>/", produto_detalhes, name="produto_detalhes"),
+    path("produto/<int:id>/", produto_detalhes, name="produto_detalhes"),
     path("categoria/<int:categoria_id>/", categoria_detalhes, name="categoria_detalhes"),
     path("departamento/<int:departamento_id>/", produtos_por_departamento, name="produtos_por_departamento"),
+    path("categoriacriar/", categoria_criar, name="categoria_criar" ),
+    path("delete/<int:id>",excluir_produto, name="deletar_produto"),
+    path("edit/<int:id>",editar_produto, name="editar_produto"),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

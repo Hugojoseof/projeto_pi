@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{}{% extends 'base.html' %}
 {% load static %}
 
 {% block link %}
@@ -16,7 +16,7 @@ Formulário Produto
     <form method="post" enctype="multipart/form-data">
       {% csrf_token %}
       <div class="form-header">
-        <h1>Adicione o produto</h1>
+        <h1>Editando '{{produtos.nome_produto}}'</h1>
       </div>
       <div class="form-body">
         <div class="form-group ">
