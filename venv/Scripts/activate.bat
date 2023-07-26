@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=C:\Users\playe\Downloads\Programação\Programação para a internet\Trabalho\projeto_pi\venv
+set VIRTUAL_ENV=C:\Users\20201094010025\Downloads\Projeto PI\projeto_pi\venv
 
 if not defined PROMPT set PROMPT=$P$G
 

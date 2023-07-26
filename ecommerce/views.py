@@ -96,7 +96,7 @@ def editar_produto(request,id):
     forms = ProdutoForm(instance=produto)
 
     if(request.method == 'POST'):
-        forms = ProdutoForm(request.POST, instance=produto)
+        forms = ProdutoForm(request.POST,request.FILES, instance=produto)
         if(forms.is_valid()):
             produto.save()
             return redirect('pag_admin')
